@@ -17,6 +17,10 @@ async function main() {
         await client.connect();
         console.log('Connected to MongoDB Atlas');
         const database = client.db('AfterSchoolActivities');
+
+        app.get('/', (req, res) => {
+        res.send('Hello! Welcome to the Edventures application.');
+        });
         
         app.get('/api/lessons', async (req, res) => {
             try {
